@@ -1,1 +1,5 @@
-Hello Galaxy
+<% @games.each do |game| %>
+  <h2><%= link_to game.title, game_path(game)%></h2>
+<% end %>
+
+<%= link_to "Add Game", new_game_path %>
