@@ -1,6 +1,9 @@
 class GamesController < ApplicationController
+  before_action :find_game, only: [:show, :update, :edit, :destroy]
   def index
     @games = Game.all.order("created_at DESC")
+  end
+  def show
   end
   def new
     @game = Game.new
@@ -20,5 +23,8 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:title, :description, :company)
+  end
+  def find_game
+    @game = Game.find(params[:id])
   end
 end
