@@ -1,3 +1,8 @@
 <h2><%=@game.title%></h2>
-<h3><%=@game.commpany%></h3>
-<p><%=@game.commpany%></p>
+<h3><%=@game.company%></h3>
+<p><%=@game.description%></p>
+
+<%= link_to "Edit", edit_game_path(@game) %>
+<%= link_to "Delete", game_path(@game), method: :delete, data: {confirm:
+  "Are you sure?"} %>
+<%= link_to "Back", root_path %>

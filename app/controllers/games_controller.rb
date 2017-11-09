@@ -23,12 +23,14 @@ class GamesController < ApplicationController
 
   def update
     if @game.update(game_params)
-      redirect_to to game_path(@game)
+      redirect_to game_path(@game)
     else
       render 'edit'
     end
   end
   def destroy
+    @game.destroy
+    redirect_to root_path
   end
 
   def game_params
