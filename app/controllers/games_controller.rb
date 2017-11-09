@@ -21,6 +21,16 @@ class GamesController < ApplicationController
   def edit
   end
 
+  def update
+    if @game.update(game_params)
+      redirect_to to game_path(@game)
+    else
+      render 'edit'
+    end
+  end
+  def destroy
+  end
+
   def game_params
     params.require(:game).permit(:title, :description, :company)
   end
