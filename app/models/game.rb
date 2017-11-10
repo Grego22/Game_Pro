@@ -1,4 +1,4 @@
 class Game < ApplicationRecord
-  belongs_to :catergory
   belongs_to :user
+  belongs_to :catergory
 end

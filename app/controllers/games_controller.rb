@@ -6,10 +6,10 @@ class GamesController < ApplicationController
   def show
   end
   def new
-    @game = current_user.game.build
+    @game = current_user.games.build
   end
   def create
-    @game = current_user.game.build(game_params)
+    @game = current_user.games.build(game_params)
     if @game.save
       redirect_to root_path
     else
