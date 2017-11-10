@@ -1,3 +1,8 @@
 <h1>Edit Game</h1>
-
-<%= render 'form' %>
+<%= simple_form_for @game, html: {multipart: true} do |f| %>
+  <%= f.select :catergory_id, @catergories %>
+  <%= f.input :title, label: "Game Title" %>
+  <%= f.input :company, label: "Publishing Company" %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
