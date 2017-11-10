@@ -1,4 +1,6 @@
 <%= simple_form_for @game do |f| %>
+  <%= select_tag(:catergory_id, options_for_select(@catergories),
+  :prompt => "Select Catergory" )%>
   <%= f.input :title, label: "Game Title" %>
   <%= f.input :company, label: "Publishing Company" %>
   <%= f.input :description %>
