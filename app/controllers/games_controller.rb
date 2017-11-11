@@ -1,7 +1,11 @@
 class GamesController < ApplicationController
   before_action :find_game, only: [:show, :update, :edit, :destroy]
   def index
-    @games = Game.all.order("created_at DESC")
+    if params[:catergory].blank?
+      @games = Game.all.order("created_at DESC")
+    else
+      catergory_id = Catergory.find_by(name: params [:catergory]).id
+      @games = Game.where(:catergory_id => @catergory_id).order("created_at DESC")
   end
   def show
   end
@@ -26,7 +30,7 @@ class GamesController < ApplicationController
 
   def update
     @catergories = Catergory.all.map{ |c| [c.name, c.id]}
-    
+
     if @game.update(game_params)
       redirect_to game_path(@game)
     else
