@@ -1,14 +1,25 @@
-<h2><%=@game.title%></h2>
-<h3><%=@game.company%></h3>
-<h4><%=@game.catergory.name%></h4>
-<p><%=@game.description%></p>
+<div class="row">
+  <div class= "col-md-4">
+    <%= image_tag @game.img.url(:medium), class: "game-show" %>
+  </div>
+
+  <div class="col-md-8"
+    <div class="game-info">
+      <h2 class="game-title"><%=@game.title%></h2>
+      <h3 class="game-director"><span> From  </span><%=@game.company%></h3>
+      <h4 class="gamme-director"><%=@game.catergory.name%></h4>
+      <p class="play-desc"><%=@game.description%></p>
+    </div>
+  </div>
+
+</div>
 
 <div class= "links btn-group">
   <% if user_signed_in? %>
     <% if @game.user_id == current_user.id %>
-      <%= link_to "Edit", edit_game_path(@game) %>
+      <%= link_to "Edit", edit_game_path(@game), class: "btn btn-custom" %>
       <%= link_to "Delete", game_path(@game), method: :delete, data: {confirm:
-        "Are you sure?"} %>
+        "Are you sure?"}, class: "btn btn-custom" %>
     <% end %>
   <% end %>
 </div>
