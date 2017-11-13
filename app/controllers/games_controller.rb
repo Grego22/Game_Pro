@@ -4,8 +4,9 @@ class GamesController < ApplicationController
     if params[:catergory].blank?
       @games = Game.all.order("created_at DESC")
     else
-      catergory_id = Catergory.find_by(name: params [:catergory]).id
+      @catergory_id = Catergory.find_by(name: params[:catergory]).id
       @games = Game.where(:catergory_id => @catergory_id).order("created_at DESC")
+    end
   end
   def show
   end
