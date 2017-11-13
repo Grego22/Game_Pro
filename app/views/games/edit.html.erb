@@ -1,5 +1,6 @@
 <h1>Edit Game</h1>
 <%= simple_form_for @game, html: {multipart: true} do |f| %>
+  <%= f.file_field :game_img %>
   <%= f.select :catergory_id, @catergories %>
   <%= f.input :title, label: "Game Title" %>
   <%= f.input :company, label: "Publishing Company" %>
