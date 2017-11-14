@@ -22,6 +22,9 @@ gem 'uglifier', '>= 1.3.0'
 #form templating
 gem 'simple_form'
 
+#for adding stars to reviews
+gem 'ratyrate', :github => 'wazery/ratyrate'
+
 gem "paperclip", "~> 5.0.0"
 #for image uploading
 

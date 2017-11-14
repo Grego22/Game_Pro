@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
   def destroy
     @game.destroy
       redirect_to game_path(@game)
-      
+
 
   end
 
