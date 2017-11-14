@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :find_game
-  
+
+  def index
+  end
   def new
     @game = Game.find(params[:game_id])
     @review = Review.new
