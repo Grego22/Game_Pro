@@ -9,6 +9,11 @@ class GamesController < ApplicationController
     end
   end
   def show
+      if @game.review.blank?
+        @average_review = 0
+      else
+        @average_review = @game.reviews.average(:rating).round(2)
+      end
   end
   def new
     @game = current_user.games.build
