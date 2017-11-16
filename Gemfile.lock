@@ -6,12 +6,6 @@ GIT
     bootstrap-generators (3.3.4)
       railties (>= 3.1.0)
 
-GIT
-  remote: https://github.com/wazery/ratyrate.git
-  revision: d61cfb73343e4b461f536e56c7b1bd1f7465d0a4
-  specs:
-    ratyrate (1.2.2.alpha)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -235,7 +229,6 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails_12factor
-  ratyrate!
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
