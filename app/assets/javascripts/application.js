@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery.raty
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
