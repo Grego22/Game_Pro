@@ -3,9 +3,9 @@
  *
  * The MIT License
  *
- * @author  : Washington Botelho
- * @doc     : http://wbotelhos.com/raty
- * @version : 2.7.0
+ * author:  Washington Botelho
+ * github:  wbotelhos/raty
+ * version: 2.8.0
  *
  */
 
@@ -19,7 +19,13 @@
 
 				methods.destroy.call(this.self);
 
-				this.opt = $.extend(true, {}, $.fn.raty.defaults, options);
+				this.opt = $.extend(
+					true,
+					{},
+					$.fn.raty.defaults,
+					options,
+					this.self.data()
+				);
 
 				methods._adjustCallback.call(this);
 				methods._adjustNumber.call(this);
@@ -58,7 +64,14 @@
 		},
 
 		_adjustCallback: function() {
-			var options = ["number", "readOnly", "score", "scoreName", "target"];
+			var options = [
+				"number",
+				"readOnly",
+				"score",
+				"scoreName",
+				"target",
+				"path"
+			];
 
 			for (var i = 0; i < options.length; i++) {
 				if (typeof this.opt[options[i]] === "function") {
@@ -471,7 +484,7 @@
 			return this.opt.score && this.opt.score >= i ? "starOn" : "starOff";
 		},
 
-		_resetTitle: function(star) {
+		_resetTitle: function() {
 			for (var i = 0; i < this.opt.number; i++) {
 				this.stars[i].title = methods._getHint.call(this, i + 1);
 			}
@@ -495,7 +508,7 @@
 			if (evt || this.move) {
 				name = decimal > 0.5 ? "starOn" : "starHalf";
 			} else if (decimal > this.opt.round.down) {
-				// Up:   [x.76 .. x.99]
+				// Up: [x.76 .. x.99]
 				name = "starOn";
 
 				if (this.opt.halfShow && decimal < this.opt.round.up) {
@@ -682,7 +695,7 @@
 
 				if (self.data("readonly") !== readonly) {
 					if (readonly) {
-						self.off(".raty").children("img").off(".raty");
+						self.off(".raty").children(this.opt.starType).off(".raty");
 
 						methods._lock.call(this);
 					} else {
@@ -742,8 +755,8 @@
 		cancel: false,
 		cancelClass: "raty-cancel",
 		cancelHint: "Cancel this rating!",
-		cancelOff: '<%= asset_path("cancel-off.png") %>',
-		cancelOn: '<%= asset_path("cancel-on.png") %>',
+		cancelOff: "cancel-off.png",
+		cancelOn: "cancel-on.png",
 		cancelPlace: "left",
 		click: undefined,
 		half: false,
@@ -763,9 +776,9 @@
 		scoreName: "score",
 		single: false,
 		space: true,
-		starHalf: '<%= asset_path("star-half.png") %>',
-		starOff: '<%= asset_path("star-off.png") %>',
-		starOn: '<%= asset_path("star-on.png") %>',
+		starHalf: "star-half.png",
+		starOff: "star-off.png",
+		starOn: "star-on.png",
 		starType: "img",
 		target: undefined,
 		targetFormat: "{score}",
