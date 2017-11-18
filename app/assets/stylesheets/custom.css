@@ -7,3 +7,19 @@
 	height: 475px;
 	width: 325px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+p.alert,
+p.notice {
+	margin: 0;
+}
