@@ -1,7 +1,16 @@
+@mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px 4px #ccc;
+	padding: .6em .6em;
+}
+
 .game {
 	height: 350px;
 	width: 250px;
 	padding-bottom: 2em;
+	@include background-tile;
 }
 
 .game-show {
@@ -47,5 +56,18 @@ h1 {
 	.review-comment {
 		font-size: 1.05em;
 		line-height: 1.5;
+	}
+}
+
+.new-game-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+		font-weight: bold;
+	}
+
+	#catergory_id {
+		margin-bottom: 10px;
 	}
 }

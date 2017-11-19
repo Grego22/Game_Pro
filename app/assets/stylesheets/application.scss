@@ -19,3 +19,11 @@
 @import 'bootstrap-variables';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import 'custom.css';
+
+@mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px 4px #ccc;
+	padding: .6em .6em;
+}
