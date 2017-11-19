@@ -16,6 +16,11 @@
 .game-show {
 	height: 475px;
 	width: 325px;
+	@include background-tile;
+}
+
+.game-info {
+	@include background-tile;
 }
 
 h1,
@@ -70,4 +75,7 @@ h1 {
 	#catergory_id {
 		margin-bottom: 10px;
 	}
+}
+.current-catergory {
+	margin-bottom: 40px;
 }
