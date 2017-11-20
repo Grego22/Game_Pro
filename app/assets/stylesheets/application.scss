@@ -10,14 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
+*= require_tree .
+*= require_self
 
  */
 @import 'font-awesome';
 @import 'bootstrap-social';
 @import 'bootstrap-generators';
 @import 'bootstrap-variables';
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import 'https://fonts.googleapis.com/css?family=Lato';
 @import 'custom.css';
 
 @mixin background-tile {
@@ -195,5 +196,24 @@ h1 {
 	h2 {
 		margin-top: 0;
 		font-weight: bold;
+	}
+}
+
+.navbar {
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+}
+
+.navbar-default {
+	background-color: #fff;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	.navbar-nav > li > a {
+		color: #222;
+		&:hover {
+			color: darken(#bdbdbd, 5%);
+			transition: .5s;
+		}
 	}
 }
