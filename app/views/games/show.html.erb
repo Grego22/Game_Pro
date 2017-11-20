@@ -19,6 +19,7 @@
 
 </div>
 <div class="row">
+  <br>
   <div class="col-md-12"
     <div class="reviews">
       <h1>Reviews</h1>
@@ -29,7 +30,6 @@
         </div>
       </div>
     </div>
-</div>
 <div class= "links btn-group">
   <% if user_signed_in? %>
     <% if @game.user_id == current_user.id %>
@@ -38,6 +38,7 @@
         "Are you sure?"}, class: "btn btn-custom" %>
     <% end %>
   <% end %>
+</div>
 </div>
 
 <script>
