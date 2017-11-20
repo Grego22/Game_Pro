@@ -5,6 +5,7 @@
 <% else %>
   <div class="row">
     <% @games.each do |game| %>
+      <h2><%= link_to game.title, game_path(game)%> </h2>
       <div class="col-md-3">
         <a href="/games/<%=game.id %>">
           <%= image_tag game.img.url(:medium), class: "game" %>
