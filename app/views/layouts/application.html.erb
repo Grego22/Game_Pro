@@ -33,6 +33,11 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <div class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-brand"
+            <% if user_signed_in? %>
+              <li><%= link_to "Add Game", new_game_path %></li>
+            <% end %>
+          </ul>
           <% if user_signed_in? %>
           <%= link_to "Sign Out", destroy_user_session_path, class: "navbar-brand",
             method: :delete %>
@@ -40,12 +45,6 @@
             <%= link_to "Sign Up", new_user_registration_path, class: "navbar-brand" %>
             <%= link_to "Log In", new_user_session_path, class: "navbar-brand" %>
           <% end %>
-
-          <ul class="nav navbar-brand"
-            <% if user_signed_in? %>
-              <li><%= link_to "Add Game", new_game_path %></li>
-            <% end %>
-          </ul>
           <ul class="nav navbar-nav">
             <li class ="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button"
