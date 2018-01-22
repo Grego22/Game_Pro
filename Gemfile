@@ -24,7 +24,7 @@ gem 'simple_form'
 
 #for adding stars to reviews
 
-gem "paperclip", "~> 5.0.0"
+# gem "paperclip", "~> 5.0.0"
 #for image uploading
 
 gem 'devise'
